@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Goals } from '../goalList';
+import { Goal } from '../goal/goal.component';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,15 @@ import { Goals } from '../goalList';
 export class GoalService {
 
   getGoals(){
-    return Goals;
+    return Goals
+  }
+
+  getGoal(id){
+    for (let goal of Goal){
+      if (goal.id == id){
+        return goal;
+      }
+    }
   }
 
   constructor() { }
