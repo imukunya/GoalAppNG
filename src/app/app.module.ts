@@ -9,6 +9,11 @@ import { StrikethroughDirective } from './strikethrough.directive';
 import { DateCountPipe } from './date-count.pipe';
 import { GoalFormComponent } from './goal-form/goal-form.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {NavbarComponent} from '';
+import { GoalService } from './goal-service/goal.service';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,15 +21,17 @@ import { FormsModule } from '@angular/forms';
     GoalDetailComponentComponent,
     StrikethroughDirective,
     DateCountPipe,
-    GoalFormComponent
-  ],
+    GoalFormComponent,
+    NavbarComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [GoalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

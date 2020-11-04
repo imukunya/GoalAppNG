@@ -10,11 +10,12 @@ import { Goal } from '../goals';
 export class GoalFormComponent implements OnInit {
 
   newGoal = new Goal(0,"","",new Date());
+
   @Output() addGoal = new EventEmitter<Goal>();
 
-    submitGoal(){
-  this.addGoal.emit(this.newGoal);
-    }
+  submitGoal(){
+    this.addGoal.emit(this.newGoal);
+  }
   constructor() { }
 
   ngOnInit() {
